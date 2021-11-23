@@ -1,0 +1,16 @@
+{
+    "name": "hexlet/code",
+    "bin": "bin/brain-games",
+    "autoload": {
+        "psr-4": {
+            "Hexlet\\Code\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "MaksimRosh",
+            "email": "roshms@mail.ru"
+        }
+    ],
+    "require": {}
+}
