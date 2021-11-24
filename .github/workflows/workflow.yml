@@ -1,8 +1,9 @@
-name: make lint
+name: PHP
 on: push
 jobs:
   my-job:
+	build:
     runs-on: ubuntu-latest
     steps:
-      - name: my-step
+      - name: Run Linter
         run: make lint
