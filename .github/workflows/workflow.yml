@@ -1,8 +1,8 @@
-name: PHP
+name: PHP_CodeSniffer
 on: push
 jobs:
   my-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Run Linter
+     - name: Run linter
         run: make lint
