@@ -4,41 +4,28 @@ namespace Brain\Games\Even;
 
 use function cli\line;
 use function cli\prompt;
-
-function correctAnswer($number): string
-{
-    return ($number % 2 === 0 ? "yes" : "no");
-}
-
-function welcome()
-{
-    global $name;
-    line('Welcome to the Brain Game!');
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
-}
+use function Brain\Games\Engine\start;
+use function Brain\Games\Engine\win;
+use function Brain\Games\Engine\endGame;
 
 function evenUneven(): int
 {
     global $name;
-    welcome();
+    start('Answer "yes" if the number is even, otherwise answer "no".');
     $result = 0;
-    line('Answer "yes" if the number is even, otherwise answer "no".');
     while ($result < 3) {
         $number = rand(1, 100);
+        $correctAnswer = $number % 2 === 0 ? "yes" : "no";
         line("Question: %d", $number);
-        $answer = prompt('Your answer: ');
-        if ($answer === correctAnswer($number)) {
+        $userAnswer = prompt('Your answer: ');
+        if ($userAnswer === $correctAnswer) {
             line('Correct!');
             $result++;
-        } elseif ($answer != correctAnswer($number)) {
-            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, correctAnswer($number));
-            line("Let's try again, %s!", $name);
+        } elseif ($userAnswer != $correctAnswer) {
+            endGame($userAnswer, $correctAnswer, $name);
             break;
         }
     }
-    if ($result === 3) {
-        line("Congratulations, %s!", $name);
-    }
+    win($result);
     return $result;
 }
