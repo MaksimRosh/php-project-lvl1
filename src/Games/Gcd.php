@@ -22,7 +22,7 @@ function greatestCommonDivisor(): int
         $number1 = rand(1, 100);
         $number2 = rand(1, 100);
         $correctAnswer = correctAnswer($number1, $number2);
-        line("Question: %d  %d",$number1, $number2);
+        line("Question: $number1 $number2");
         $userAnswer = prompt('Your answer: ');
         if ($userAnswer == $correctAnswer) {
             line('Correct!');
