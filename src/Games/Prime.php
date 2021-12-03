@@ -24,10 +24,10 @@ function primeNumber(): int
     start('Answer "yes" if given number is prime. Otherwise answer "no".');
     $result = 0;
     while ($result < 3) {
-    $number = rand(2,100);
-    line("Question: %d", $number);
-    $userAnswer = prompt('Your answer: ');
-    correctAnswer($number);
+        $number = rand(2, 100);
+        line("Question: %d", $number);
+        $userAnswer = prompt('Your answer: ');
+        correctAnswer($number);
         if ($userAnswer == correctAnswer($number)) {
             line("Correct!");
             $result++;
@@ -40,4 +40,3 @@ function primeNumber(): int
     win($result);
     return $result;
 }
-
