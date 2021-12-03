@@ -27,13 +27,12 @@ function primeNumber(): int
         $number = rand(2, 100);
         line("Question: %d", $number);
         $userAnswer = prompt('Your answer: ');
-        correctAnswer($number);
-        if ($userAnswer == correctAnswer($number)) {
+        $correctAnswer = correctAnswer($number);
+        if ($userAnswer == $correctAnswer) {
             line("Correct!");
             $result++;
-        } elseif ($userAnswer != correctAnswer($number)) {
-            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userAnswer, correctAnswer($number));
-            line("Let's try again, %s!", $name);
+        } elseif ($userAnswer != $correctAnswer) {
+            endGame($userAnswer, $correctAnswer, $name);
             break;
         }
     }

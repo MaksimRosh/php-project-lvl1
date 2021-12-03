@@ -8,6 +8,11 @@ use function Brain\Games\Engine\start;
 use function Brain\Games\Engine\win;
 use function Brain\Games\Engine\endGame;
 
+function correctAnswer($number1, $number2): int
+{
+    return ($number1 % $number2 != 0) ? correctAnswer($number2, $number1 % $number2) : $number2;
+}
+
 function greatestCommonDivisor(): int
 {
     global $name;
@@ -16,7 +21,7 @@ function greatestCommonDivisor(): int
     while ($result < 3) {
         $number1 = rand(1, 100);
         $number2 = rand(1, 100);
-        $correctAnswer = gmp_gcd($number1, $number2);
+        $correctAnswer = correctAnswer($number1, $number2);
         line("Question: %d  %d", $number1, $number2);
         $userAnswer = prompt('Your answer: ');
         if ($userAnswer == $correctAnswer) {

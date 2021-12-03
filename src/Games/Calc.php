@@ -6,6 +6,7 @@ use function cli\line;
 use function cli\prompt;
 use function Brain\Games\Engine\start;
 use function Brain\Games\Engine\win;
+use function Brain\Games\Engine\endGame;
 
 function correctAnswer($number1, $number2, $operation): int
 {
@@ -44,17 +45,13 @@ function calculator(): int
                 line("Question: %d * %d", $number1, $number2);
                 break;
         }
+        $correctAnswer = correctAnswer($number1, $number2, $operation);
         $userAnswer = prompt('Your answer: ');
-        if ($userAnswer == correctAnswer($number1, $number2, $operation)) {
+        if ($userAnswer == $correctAnswer) {
             line("Correct!");
             $result++;
-        } elseif ($userAnswer != correctAnswer($number1, $number2, $operation)) {
-            line(
-                "'%s' is wrong answer ;(. Correct answer was '%s'.",
-                $userAnswer,
-                correctAnswer($number1, $number2, $operation)
-            );
-            line("Let's try again, %s!", $name);
+        } elseif ($userAnswer != $correctAnswer) {
+            endGame($userAnswer, $correctAnswer, $name);
             break;
         }
     }
