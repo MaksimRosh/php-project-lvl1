@@ -5,7 +5,7 @@ namespace Brain\Games\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function start($conditions)
+function start(string $conditions): void
 {
     global $name;
     line('Welcome to the Brain Game!');
@@ -14,7 +14,7 @@ function start($conditions)
     line($conditions);
 }
 
-function win($result)
+function win(int $result): void
 {
     global $name;
     if ($result === 3) {
@@ -22,7 +22,7 @@ function win($result)
     }
 }
 
-function endGame($userAnswer, $correctAnswer, $name)
+function endGame(mixed $userAnswer, mixed $correctAnswer, string $name): void
 {
     line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userAnswer, $correctAnswer);
     line("Let's try again, %s!", $name);

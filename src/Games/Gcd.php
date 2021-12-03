@@ -8,7 +8,7 @@ use function Brain\Games\Engine\start;
 use function Brain\Games\Engine\win;
 use function Brain\Games\Engine\endGame;
 
-function correctAnswer($number1, $number2): int
+function correctAnswer(int $number1, int $number2): int
 {
     return ($number1 % $number2 != 0) ? correctAnswer($number2, $number1 % $number2) : $number2;
 }
