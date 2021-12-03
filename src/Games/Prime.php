@@ -8,14 +8,19 @@ use function Brain\Games\Engine\start;
 use function Brain\Games\Engine\win;
 use function Brain\Games\Engine\endGame;
 
-function correctAnswer($number): string
+function getPrime(): array
 {
+    $number = rand(2, 100);
+    $Prime = "";
     for ($i = 2; $i < $number; $i++) {
-        if ($number % $i === 0) {
-            return 'no';
+        if ($number % $i == 0) {
+            $Prime = "no";
+            break;
+        } else {
+            $Prime = "yes";
         }
     }
-    return 'yes';
+    return array("number" => $number, "answer" => $Prime);
 }
 
 function primeNumber(): int
@@ -24,10 +29,10 @@ function primeNumber(): int
     start('Answer "yes" if given number is prime. Otherwise answer "no".');
     $result = 0;
     while ($result < 3) {
-        $number = rand(2, 100);
-        line("Question: %d", $number);
+        $number = getPrime();
+        line("Question: %d", $number["number"]);
         $userAnswer = prompt('Your answer: ');
-        $correctAnswer = correctAnswer($number);
+        $correctAnswer = $number["answer"];
         if ($userAnswer == $correctAnswer) {
             line("Correct!");
             $result++;
