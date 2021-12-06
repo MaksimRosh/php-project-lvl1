@@ -4,22 +4,22 @@ namespace src\Games\prime;
 
 use function Brain\Games\engine\game;
 
-function isPrime(int $number): void
+function isPrime(int $number): bool
 {
     $meaning = true;
     for ($i = 2; $i < $number; $i++) {
         if ($number % $i === 0) {
             $meaning = false;
-            break;
         }
     }
+    return $meaning;
 }
 
 function getCorrectAnswer(): array
 {
     $number = rand(2, 100);
-    $prime = "";
-    if (isPrime($number) == false) {
+    $prime = isPrime($number);
+    if ($prime == false) {
             $prime = "no";
     } else {
             $prime = "yes";

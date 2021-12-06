@@ -9,9 +9,9 @@
 5 mini command line games
 
 #### installation:
-1. clone the repository
-command: git clone https://github.com/Ilyajr17/php-project-lvl1.git
-2. install composer
+1. clone the repository</br>
+command: git clone git@github.com:MaksimRosh/php-project-lvl1.git
+2. install composer</br>
 command: make install
 
 #### make install:
