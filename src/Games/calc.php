@@ -28,6 +28,7 @@ function calculator(): void
         $number1 = rand(1, 50);
         $number2 = rand(1, 50);
         $operation = rand(1, 3);
+        $question = '';
         switch ($operation) {
             case 1:
                 $question = "$number1 + $number2";
