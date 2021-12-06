@@ -14,7 +14,7 @@ function game(callable $game, string $conditionsGame): int
     $result = 0;
     while ($result < 3) {
         [$question, $correctAnswer] = $game();
-        line("Question:  %s", $question);
+        line("Question: %s", $question);
         $userAnswer = prompt("Your answer");
         if ($userAnswer != $correctAnswer) {
             line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userAnswer, $correctAnswer);
