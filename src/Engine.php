@@ -16,7 +16,7 @@ function gameEngine(callable $conditionsGame, string $gameDescription): int
         [$question, $correctAnswer] = $conditionsGame();
         line("Question: %s", $question);
         $userAnswer = prompt("Your answer");
-        if ($userAnswer != $correctAnswer) {
+        if ($userAnswer !== (string)$correctAnswer) {
             line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userAnswer, $correctAnswer);
             line("Let's try again, %s!", $name);
             return $result;
