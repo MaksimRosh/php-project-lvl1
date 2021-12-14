@@ -1,17 +1,17 @@
 <?php
 
-namespace src\Games\gcd;
+namespace BrainGames\Games\Gcd;
 
-use function Brain\Games\engine\game;
+use function BrainGames\Engine\gameEngine;
 
 function getCorrectAnswer(int $number1, int $number2): int
 {
-    return ($number1 % $number2 != 0) ? getCorrectAnswer($number2, $number1 % $number2) : $number2;
+    return ($number1 % $number2 !== 0) ? getCorrectAnswer($number2, $number1 % $number2) : $number2;
 }
 
-function greatestCommonDivisor(): void
+function gcdGame(): void
 {
-    $conditionsGame = 'Find the greatest common divisor of given numbers.';
+    $gameDescription = 'Find the greatest common divisor of given numbers.';
     $greatestCommonDivisor = function (): array {
         $number1 = rand(1, 100);
         $number2 = rand(1, 100);
@@ -19,5 +19,5 @@ function greatestCommonDivisor(): void
         $question = "$number1 $number2";
         return [$question, $correctAnswer];
     };
-    game($greatestCommonDivisor, $conditionsGame);
+    gameEngine($greatestCommonDivisor, $gameDescription);
 }

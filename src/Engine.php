@@ -1,25 +1,25 @@
 <?php
 
-namespace Brain\Games\engine;
+namespace BrainGames\Engine;
 
 use function cli\line;
 use function cli\prompt;
 
-function game(callable $game, string $conditionsGame): int
+function gameEngine(callable $conditionsGame, string $gameDescription): int
 {
     line('Welcome to the Brain Game!');
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
-    line($conditionsGame);
+    line($gameDescription);
     $result = 0;
     while ($result < 3) {
-        [$question, $correctAnswer] = $game();
+        [$question, $correctAnswer] = $conditionsGame();
         line("Question: %s", $question);
         $userAnswer = prompt("Your answer");
         if ($userAnswer != $correctAnswer) {
             line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userAnswer, $correctAnswer);
             line("Let's try again, %s!", $name);
-            exit;
+            return $result;
         } else {
             line("Correct!");
             $result++;

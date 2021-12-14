@@ -1,8 +1,8 @@
 <?php
 
-namespace src\Games\progression;
+namespace BrainGames\Games\Progression;
 
-use function Brain\Games\engine\game;
+use function BrainGames\Engine\gameEngine;
 
 function getRandomProgression(): array
 {
@@ -16,25 +16,25 @@ function getRandomProgression(): array
     return $rowOfNumbers;
 }
 
-function getCorrectAnswer(): array
+function getRowAndAnswer(): array
 {
     $rowOfNumbers = getRandomProgression();
     $position = rand(0, count($rowOfNumbers) - 1);
     $progressionArray = [];
-    $progressionArray["element"] = $rowOfNumbers[$position];
+    $progressionArray["answer"] = $rowOfNumbers[$position];
     $rowOfNumbers[$position] = "..";
     $progressionArray["row"] = $rowOfNumbers;
     return $progressionArray;
 }
 
-function missingNumber(): void
+function progressionGame(): void
 {
-    $conditionsGame = 'What number is missing in the progression?';
+    $gameDescription = 'What number is missing in the progression?';
     $missingNumber = function (): array {
-        $progression = getCorrectAnswer();
-        $correctAnswer = $progression["element"];
+        $progression = getRowAndAnswer();
+        $correctAnswer = $progression["answer"];
         $question = implode(" ", $progression["row"]);
         return [$question, $correctAnswer];
     };
-    game($missingNumber, $conditionsGame);
+    gameEngine($missingNumber, $gameDescription);
 }
