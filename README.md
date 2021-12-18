@@ -15,7 +15,7 @@ command: git clone git@github.com:MaksimRosh/php-project-lvl1.git
 command: make install
 
 #### make install:
-[![asciicast](https://asciinema.org/a/nB8Ek0iCKGKFyJze36WsTsTds.svg)](https://asciinema.org/a/nB8Ek0iCKGKFyJze36WsTsTds)
+[![asciicast](https://asciinema.org/a/mPpjT4kcorgsIxyYZWvyY2ykK.svg)](https://asciinema.org/a/mPpjT4kcorgsIxyYZWvyY2ykK)
 #### make brain-even:
 [![asciicast](https://asciinema.org/a/NVXjP9jkRD72dglsA7jR10fzT.svg)](https://asciinema.org/a/NVXjP9jkRD72dglsA7jR10fzT)
 #### make brain-calc:
