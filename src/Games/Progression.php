@@ -2,13 +2,12 @@
 
 namespace BrainGames\Games\Progression;
 
-use function BrainGames\Engine\gameEngine;
+use function BrainGames\Engine\handleGameEngine;
 
-function getRandomProgression(): array
+const GAME_DESCRIPTION = 'What number is missing in the progression?';
+
+function getRandomProgression(int $length, int $number, int $step): array
 {
-    $length = rand(5, 10);
-    $number = rand(1, 50);
-    $step = rand(2, 5);
     $rowOfNumbers = [];
     for ($i = 0; count($rowOfNumbers) < $length; $i++) {
         $rowOfNumbers[] = $number + ($step * $i);
@@ -16,25 +15,28 @@ function getRandomProgression(): array
     return $rowOfNumbers;
 }
 
-function getRowAndAnswer(): array
+function removeNumberInProgression(array $randomProgression): array
 {
-    $rowOfNumbers = getRandomProgression();
-    $position = rand(0, count($rowOfNumbers) - 1);
+    $position = rand(0, count($randomProgression) - 1);
     $progressionArray = [];
-    $progressionArray["answer"] = $rowOfNumbers[$position];
-    $rowOfNumbers[$position] = "..";
-    $progressionArray["row"] = $rowOfNumbers;
+    $progressionArray["answer"] = $randomProgression[$position];
+    $randomProgression[$position] = "..";
+    $progressionArray["row"] = $randomProgression;
     return $progressionArray;
 }
 
-function progressionGame(): void
+function startGame(): void
 {
-    $gameDescription = 'What number is missing in the progression?';
+    $gameDescription = GAME_DESCRIPTION;
     $missingNumber = function (): array {
-        $progression = getRowAndAnswer();
+        $length = rand(5, 10);
+        $number = rand(1, 50);
+        $step = rand(2, 5);
+        $randomProgression = getRandomProgression($length, $number, $step);
+        $progression = removeNumberInProgression($randomProgression);
         $correctAnswer = $progression["answer"];
         $question = implode(" ", $progression["row"]);
         return [$question, $correctAnswer];
     };
-    gameEngine($missingNumber, $gameDescription);
+    handleGameEngine($missingNumber, $gameDescription);
 }

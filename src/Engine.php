@@ -5,7 +5,7 @@ namespace BrainGames\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function gameEngine(callable $conditionsGame, string $gameDescription): int
+function handleGameEngine(callable $conditionsGame, string $gameDescription): void
 {
     line('Welcome to the Brain Games!');
     $name = prompt('May I have your name?');
@@ -19,12 +19,10 @@ function gameEngine(callable $conditionsGame, string $gameDescription): int
         if ($userAnswer !== (string)$correctAnswer) {
             line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userAnswer, $correctAnswer);
             line("Let's try again, %s!", $name);
-            return $result;
-        } else {
+            return;
+        }
             line("Correct!");
             $result++;
-        }
     }
     line("Congratulations, %s!", $name);
-    return $result;
 }

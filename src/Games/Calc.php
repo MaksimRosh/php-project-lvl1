@@ -2,17 +2,17 @@
 
 namespace BrainGames\Games\Calc;
 
-use function BrainGames\Engine\gameEngine;
+use function BrainGames\Engine\handleGameEngine;
 
-function calcGame(): void
+const GAME_DESCRIPTION = 'What is the result of the expression?';
+
+function startGame(): void
 {
-    $gameDescription = 'What is the result of the expression?';
+    $gameDescription = GAME_DESCRIPTION;
     $calculator = function (): array {
         $number1 = rand(1, 50);
         $number2 = rand(1, 50);
         $operation = rand(1, 3);
-        $question = '';
-        $correctAnswer = 0;
         switch ($operation) {
             case 1:
                 $question = "$number1 + $number2";
@@ -26,8 +26,10 @@ function calcGame(): void
                 $question = "$number1 * $number2";
                 $correctAnswer = $number1 * $number2;
                 break;
+            default:
+                throw new Exception('Undefined Operation');
         }
         return [$question, $correctAnswer];
     };
-    gameEngine($calculator, $gameDescription);
+    handleGameEngine($calculator, $gameDescription);
 }
