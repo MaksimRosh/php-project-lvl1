@@ -15,14 +15,14 @@ command: git clone git@github.com:MaksimRosh/php-project-lvl1.git
 command: make install
 
 #### make install:
-[![asciicast](https://asciinema.org/a/Fn8f9HpMZeoVsyTsKbis1vOO1.svg)](https://asciinema.org/a/Fn8f9HpMZeoVsyTsKbis1vOO1)
+[![asciicast](https://asciinema.org/a/nB8Ek0iCKGKFyJze36WsTsTds.svg)](https://asciinema.org/a/nB8Ek0iCKGKFyJze36WsTsTds)
 #### make brain-even:
-[![asciicast](https://asciinema.org/a/otFtAjHxVmnnS8sPja3bkvGB3.svg)](https://asciinema.org/a/otFtAjHxVmnnS8sPja3bkvGB3)
+[![asciicast](https://asciinema.org/a/NVXjP9jkRD72dglsA7jR10fzT.svg)](https://asciinema.org/a/NVXjP9jkRD72dglsA7jR10fzT)
 #### make brain-calc:
-[![asciicast](https://asciinema.org/a/ibX9Bwu9bvp3OUbMJpMIUMq7t.svg)](https://asciinema.org/a/ibX9Bwu9bvp3OUbMJpMIUMq7t)
+[![asciicast](https://asciinema.org/a/wLKtw8E1Y2VHOHUXHf3qxxsy0.svg)](https://asciinema.org/a/wLKtw8E1Y2VHOHUXHf3qxxsy0)
 #### make brain-gcd:
-[![asciicast](https://asciinema.org/a/138xzMByr0KlWSPcs0HvnHsYN.svg)](https://asciinema.org/a/138xzMByr0KlWSPcs0HvnHsYN)
+[![asciicast](https://asciinema.org/a/nUtwPBZYzYGVT8lfLyWPDP9Ny.svg)](https://asciinema.org/a/nUtwPBZYzYGVT8lfLyWPDP9Ny)
 #### make brain-progression:
-[![asciicast](https://asciinema.org/a/xpbElCvBQGbDoaDg0pEXDv26h.svg)](https://asciinema.org/a/xpbElCvBQGbDoaDg0pEXDv26h)
+[![asciicast](https://asciinema.org/a/OGiqHkXABHYD3QwP8Czp6VAU1.svg)](https://asciinema.org/a/OGiqHkXABHYD3QwP8Czp6VAU1)
 #### make brain-prime:
-[![asciicast](https://asciinema.org/a/wCxgJNOUWOrvAX8SBLprNFILI.svg)](https://asciinema.org/a/wCxgJNOUWOrvAX8SBLprNFILI)
+[![asciicast](https://asciinema.org/a/bUFOCQCZKeJR5QFnuI5tfQClC.svg)](https://asciinema.org/a/bUFOCQCZKeJR5QFnuI5tfQClC)
