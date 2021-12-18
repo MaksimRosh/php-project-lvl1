@@ -13,6 +13,8 @@ function startGame(): void
         $number1 = rand(1, 50);
         $number2 = rand(1, 50);
         $operation = rand(1, 3);
+        $question = '';
+        $correctAnswer = 0;
         switch ($operation) {
             case 1:
                 $question = "$number1 + $number2";
@@ -29,7 +31,7 @@ function startGame(): void
             default:
                 echo 'Undefined Operation';
         }
-        return [&$question, &$correctAnswer];
+        return [$question, $correctAnswer];
     };
     handleGameEngine($calculator, $gameDescription);
 }
