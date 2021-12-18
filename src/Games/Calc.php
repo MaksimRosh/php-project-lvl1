@@ -29,7 +29,7 @@ function startGame(): void
             default:
                 echo 'Undefined Operation';
         }
-        return [$question, $correctAnswer];
+        return [&$question, &$correctAnswer];
     };
     handleGameEngine($calculator, $gameDescription);
 }
