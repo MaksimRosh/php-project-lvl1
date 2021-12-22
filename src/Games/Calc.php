@@ -26,7 +26,7 @@ function startGame(): void
                 $correctAnswer = $number1 * $number2;
                 break;
             default:
-                throw new Exception('Undefined operation');
+                throw new \Exception('Undefined operation');
         }
         return [$question, $correctAnswer];
     };
