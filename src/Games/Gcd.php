@@ -2,7 +2,7 @@
 
 namespace BrainGames\Games\Gcd;
 
-use function BrainGames\Engine\handleGameEngine;
+use function BrainGames\Engine\handleGame;
 
 const GAME_DESCRIPTION = 'Find the greatest common divisor of given numbers.';
 
@@ -13,7 +13,6 @@ function getGreatestCommonDivisor(int $number1, int $number2): int
 
 function startGame(): void
 {
-    $gameDescription = GAME_DESCRIPTION;
     $greatestCommonDivisor = function (): array {
         $number1 = rand(1, 100);
         $number2 = rand(1, 100);
@@ -21,5 +20,5 @@ function startGame(): void
         $question = "$number1 $number2";
         return [$question, $correctAnswer];
     };
-    handleGameEngine($greatestCommonDivisor, $gameDescription);
+    handleGame($greatestCommonDivisor, GAME_DESCRIPTION);
 }
