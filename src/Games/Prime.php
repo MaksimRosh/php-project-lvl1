@@ -20,8 +20,7 @@ function startGame(): void
 {
     $primeNumber = function (): array {
         $number = rand(2, 100);
-        $prime = isPrime($number);
-        $correctAnswer = $prime === false ? "no" : "yes";
+        $correctAnswer = isPrime($number) === false ? "no" : "yes";
         return [$number, $correctAnswer];
     };
     handleGame($primeNumber, GAME_DESCRIPTION);
